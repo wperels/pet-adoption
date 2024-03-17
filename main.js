@@ -14,7 +14,9 @@ start()
 // pull in pet info from .json file into a card then clone pet cards
 // new info can be added to .json file which will automaticly update cards
 async function petsArea() {
-  const petsPromise = await fetch("https://learnwebcode.github.io/bootcamp-pet-data/pets.json")
+  // const petsPromise = await fetch("https://learnwebcode.github.io/bootcamp-pet-data/pets.json")
+  const petsPromise = await fetch("https://netlify-pet.netlify.app/.netlify/functions/pets")
+
   const petsData = await petsPromise.json()
 
   petsData.forEach((pet) => {
